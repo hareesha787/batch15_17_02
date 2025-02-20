@@ -19,15 +19,13 @@
 						"type": "DelimitedTextSource",
 						"additionalColumns": [
 							{
-								"name": "hari",
+								"name": "hareesha",
 								"value": ""
 							}
 						],
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
-							"modifiedDatetimeStart": "2025-02-20T00:00:00.000Z",
-							"modifiedDatetimeEnd": "2025-02-20T00:00:00.000Z",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -61,7 +59,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "DelimitedText4",
 						"type": "DatasetReference"
 					}
 				],

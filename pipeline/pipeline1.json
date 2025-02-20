@@ -17,9 +17,17 @@
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
+						"additionalColumns": [
+							{
+								"name": "hari",
+								"value": ""
+							}
+						],
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
+							"modifiedDatetimeStart": "2025-02-20T00:00:00.000Z",
+							"modifiedDatetimeEnd": "2025-02-20T00:00:00.000Z",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -29,12 +37,16 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
+							"type": "AzureBlobFSWriteSettings",
+							"copyBehavior": "MergeFiles"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".txt"
+							"fileExtension": {
+								"value": "@utcNow()",
+								"type": "Expression"
+							}
 						}
 					},
 					"enableStaging": false,
@@ -55,7 +67,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "DelimitedText3",
 						"type": "DatasetReference"
 					}
 				]

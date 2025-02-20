@@ -1,0 +1,7 @@
+{
+	"name": "ds_hareesha7",
+	"properties": {
+		"type": "AzureBlobFS",
+		"annotations": []
+	}
+}
